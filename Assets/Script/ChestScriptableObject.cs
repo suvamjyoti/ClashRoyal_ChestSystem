@@ -5,15 +5,21 @@ public enum ChestType
     Common,Rare,Epic,Legendary
 }
 
+public enum ChestState
+{
+    Locked,Unlocked,NotCollected,Collected
+}
+
 [CreateAssetMenu(fileName = "ScriptableChest", menuName = "ScriptableObject/chest")]
 public class ChestScriptableObject : ScriptableObject
 {
-    [SerializeField] ChestType chestType;
-    [SerializeField] int coinLowerBound;
-    [SerializeField] int coinUpperBound;
-    [SerializeField] int gemsLowerBound;
-    [SerializeField] int gemsUpperBound;
+    [SerializeField] public ChestType chestType;
+    [SerializeField] public int coinLowerBound;
+    [SerializeField] public int coinUpperBound;
+    [SerializeField] public int gemsLowerBound;
+    [SerializeField] public int gemsUpperBound;
+    [SerializeField] public float timer;
 
-    [SerializeField] Sprite chestSprite;
-    [SerializeField] Animation chestOpenAnimationClip;
+    [SerializeField] public Sprite chestSprite;
+    [SerializeField] public Animation chestOpenAnimationClip;
 }
