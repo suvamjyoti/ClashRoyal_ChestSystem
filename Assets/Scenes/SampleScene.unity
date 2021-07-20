@@ -200,6 +200,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NoOfChestAllowedToQueue: 2
+  chestList:
+  - {fileID: 11400000, guid: ad9b59e171d8a944892ca6865ad82aa7, type: 2}
+  - {fileID: 11400000, guid: 38f802684d1a3ac4695df08d59ae8871, type: 2}
+  - {fileID: 11400000, guid: 764150bc6b692e24095c506da8ae2363, type: 2}
+  - {fileID: 11400000, guid: 93b8adb8ec43bed43ab71f7f358bcda3, type: 2}
 --- !u!1001 &78430200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1509,6 +1514,7 @@ GameObject:
   - component: {fileID: 1475177057}
   - component: {fileID: 1475177056}
   - component: {fileID: 1475177055}
+  - component: {fileID: 1475177058}
   m_Layer: 0
   m_Name: Generate
   m_TagString: Untagged
@@ -1616,6 +1622,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475177053}
   m_CullTransparentMesh: 0
+--- !u!114 &1475177058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475177053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f846b0a77d59743a607bb6a97dc64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1486193721
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cec9f0447ec6454386e83f2c2e36bae, type: 3}
   m_Name: Rare
   m_EditorClassIdentifier: 
-  chestType: 0
+  chestType: 1
   coinLowerBound: 1000
   coinUpperBound: 1200
   gemsLowerBound: 80

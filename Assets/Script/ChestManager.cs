@@ -4,17 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ChestSlotManager : MonoBehaviour
+public class ChestManager : MonoBehaviour
 {
     private ChestSlot[] chestSlots;
 
     [SerializeField] private int NoOfChestAllowedToQueue;
 
+    [SerializeField] private ChestScriptableObject[] chestList;
+    public Dictionary<ChestType,ChestScriptableObject> chestPoolDict;
+    
     #region Singelton
 
-    private static ChestSlotManager _instance;
+    private static ChestManager _instance;
 
-    public static ChestSlotManager instance { get { return _instance; } }
+    public static ChestManager instance { get { return _instance; } }
 
     private void Awake()
     {
@@ -30,6 +33,13 @@ public class ChestSlotManager : MonoBehaviour
 
         //initialise chest slot list
         chestSlots = transform.GetComponentsInChildren<ChestSlot>();
+
+        //initialise chest dictionary
+        chestPoolDict = new Dictionary<ChestType, ChestScriptableObject>();
+        foreach(ChestScriptableObject chest in chestList)
+        {
+            chestPoolDict.Add(chest.chestType,chest);
+        }
         
     }
 
@@ -51,6 +61,17 @@ public class ChestSlotManager : MonoBehaviour
     private void OnSlotClicked(ChestSlot chestSlot)
     {
         //open chest slot depending on the chest slot clicked
+
+
+    }
+
+    public void PushChestIntoSlot(ChestScriptableObject chest)
+    {
+        //check if any other chest open timer is on
+
+        //check if more then allowed no of closed chest are already in queue
+
+        //push into any empty slot
 
 
     }

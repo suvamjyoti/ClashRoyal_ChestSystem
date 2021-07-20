@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class GenerateChest : MonoBehaviour
 {
-
     private Button generateButton;
-
-    [SerializeField] private ChestScriptableObject[] chestPool;  
 
     void Start()
     {
@@ -19,12 +16,35 @@ public class GenerateChest : MonoBehaviour
 
     private void GenerateChestOnClick()
     {
-        //pick a random chest from the chest pool
-        
-        //and populate it in the chest slot(max 4)
 
-        //check if currently chest queue has no more then 3 chest
+        //get the chest from poll based on chest type
+        ChestScriptableObject chest = ChestManager.instance.chestPoolDict[GetRandomChestType()];
 
-        //if full show popUp saying chest full
+        ChestManager.instance.PushChestIntoSlot(chest);
     }
+
+
+    private ChestType GetRandomChestType()
+    {
+        
+        int temp = Random.Range(0, 100);
+        
+        if (temp >= 95)                     //5% chance chest will be legendary
+        {
+            return ChestType.Legendary;
+        }
+        else if (temp >=80 && temp<95)      //15% chance chest will be epic
+        {
+            return ChestType.Epic;
+        }
+        else if(temp>=50 && temp<80)        //30% chance chest will be rare
+        {
+            return ChestType.Rare;
+        }
+        else                                //50% chance chest will be common
+        {
+            return ChestType.Common;
+        }
+    }
+
 }

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ChestSlot : MonoBehaviour
 {
+
+    private bool _isEmpty = true;
+    public bool isEmpty { get{ return _isEmpty;} }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,11 @@ public class ChestSlot : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public void AddChest()
+    {
+        _isEmpty = false;
     }
 }
