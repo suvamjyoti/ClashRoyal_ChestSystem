@@ -13,7 +13,10 @@ public class ChestInfo : MonoBehaviour
     [SerializeField] private Button startTimerButton;
     [SerializeField] private Button openUsingGemButton;
 
-    [SerializeField] private int gemCostToOpen;
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI gemText;
+
+    [SerializeField] private Image chestImage;
 
 
     private int coinLowerBound;
@@ -21,8 +24,7 @@ public class ChestInfo : MonoBehaviour
     private int gemsLowerBound;
     private int gemsUpperBound;
 
-
-
+    
     //constructor
     public ChestInfo(ChestScriptableObject chest)
     {
@@ -32,6 +34,9 @@ public class ChestInfo : MonoBehaviour
         gemsLowerBound = chest.gemsLowerBound;
         gemsUpperBound = chest.gemsUpperBound;
 
+        chestImage.sprite = chest.chestSprite;
+
+        timerText.text = chest.timer.ToString();
 
         init();
     }
@@ -56,6 +61,20 @@ public class ChestInfo : MonoBehaviour
 
     private void onClickStartTimer()
     {
+
+        startTimerButton.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(false);
+
+
+        //call start timer function
+
+
+        openUsingGemButton.gameObject.SetActive(true);
+        gemText.gameObject.SetActive(true);
+
+
+        //set gem Text according to timer.
+
 
     }
 

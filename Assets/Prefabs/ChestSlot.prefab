@@ -357,6 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06eb573a6bb75547806e234827537c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chestSprite: {fileID: 4489995110936303197}
+  chestConfig: {fileID: 0}
 --- !u!1001 &5138142962859915255
 PrefabInstance:
   m_ObjectHideFlags: 0

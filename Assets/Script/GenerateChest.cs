@@ -20,6 +20,7 @@ public class GenerateChest : MonoBehaviour
         //get the chest from poll based on chest type
         ChestScriptableObject chest = ChestManager.instance.chestPoolDict[GetRandomChestType()];
 
+        Debug.Log("Pushed chest to manager");
         ChestManager.instance.PushChestIntoSlot(chest);
     }
 

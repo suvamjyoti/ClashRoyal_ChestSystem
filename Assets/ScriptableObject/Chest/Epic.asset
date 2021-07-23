@@ -15,9 +15,9 @@ MonoBehaviour:
   chestType: 2
   coinLowerBound: 300
   coinUpperBound: 500
-  gemsLowerBound: 20
+  gemsLowerBound: 30
   gemsUpperBound: 40
   timer: 1
-  chestSprite: {fileID: -2826720843060489373, guid: 8e567b03d95fbb6418345b2aab78e491,
+  chestSprite: {fileID: 6093387866532032824, guid: 8e567b03d95fbb6418345b2aab78e491,
     type: 3}
   chestOpenAnimationClip: {fileID: 0}

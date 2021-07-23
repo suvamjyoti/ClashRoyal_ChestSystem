@@ -12,6 +12,8 @@ public class ChestManager : MonoBehaviour
 
     [SerializeField] private ChestScriptableObject[] chestList;
     public Dictionary<ChestType,ChestScriptableObject> chestPoolDict;
+
+    private bool isChestOpening = false;
     
     #region Singelton
 
@@ -60,20 +62,59 @@ public class ChestManager : MonoBehaviour
 
     private void OnSlotClicked(ChestSlot chestSlot)
     {
-        //open chest slot depending on the chest slot clicked
+        Debug.Log("Here");
+        if (chestSlot.isEmpty)
+        {
+            return;
+        }
 
+        ChestInfo chestInfo = new ChestInfo(chestSlot.chestConfig);
+
+        ChestInfo chestInfoObject = Instantiate(chestInfo,transform);
+
+        transform.parent = chestInfoObject.transform;
 
     }
 
     public void PushChestIntoSlot(ChestScriptableObject chest)
     {
-        //check if any other chest open timer is on
+        Debug.Log("manager got chest");
+
+        int noOfChestInQueue = CheckNoOfChestQueue();
 
         //check if more then allowed no of closed chest are already in queue
+        if(noOfChestInQueue >= NoOfChestAllowedToQueue)
+        {
+            //show toaster stating not allowed to generate
+            Debug.LogError("queue is full");
+            return;
+        }
+        else
+        {
+            Debug.Log("finding empty chest slot");
+            //push into the first empty slot found
+            foreach (ChestSlot chestSlot in chestSlots)
+            {
+                if (chestSlot.isEmpty)
+                {
+                    Debug.Log("pushing to slot");
+                    chestSlot.AddChest(chest);
+                    return;
+                }
+            }
+        }
+    }
 
-        //push into any empty slot
+    private int CheckNoOfChestQueue()
+    {
+        int nos=0;
 
+        foreach(ChestSlot chestSlot in chestSlots)
+        {
+            nos = (chestSlot.isEmpty) ? nos : nos+1;
+        }
 
+        return nos;
     }
 
 }

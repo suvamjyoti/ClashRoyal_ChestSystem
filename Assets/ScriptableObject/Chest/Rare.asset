@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Rare
   m_EditorClassIdentifier: 
   chestType: 1
-  coinLowerBound: 1000
-  coinUpperBound: 1200
-  gemsLowerBound: 80
-  gemsUpperBound: 100
+  coinLowerBound: 200
+  coinUpperBound: 300
+  gemsLowerBound: 20
+  gemsUpperBound: 30
   timer: 0.5
-  chestSprite: {fileID: 8985439187258846068, guid: 8e567b03d95fbb6418345b2aab78e491,
+  chestSprite: {fileID: 2305400638160058017, guid: 8e567b03d95fbb6418345b2aab78e491,
     type: 3}
   chestOpenAnimationClip: {fileID: 0}
