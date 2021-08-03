@@ -13,10 +13,6 @@ public class ChestSlot : MonoBehaviour
     [SerializeField] private Image chestSprite;
 
     [HideInInspector] public ChestScriptableObject chestConfig;
-
-
-    public event Action OnUnlocked; 
-
     
     public void AddChest(ChestScriptableObject chest)
     {
@@ -37,11 +33,6 @@ public class ChestSlot : MonoBehaviour
     public void StartChestTimer()
     {
 
-    }
-
-    public void OnChestUnlocked()
-    {
-        OnUnlocked?.Invoke();
     }
 
 

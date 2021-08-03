@@ -52,7 +52,7 @@ public class ChestInfo : MonoBehaviour
 
         timer = chestSlot.chestConfig.timer;
 
-        chestSlot.OnUnlocked += OnChestTimerComplete;
+        EventManager.instance.OnUnlocked += OnChestTimerComplete;
 
         timerText.text = timer.ToString();
 
@@ -76,6 +76,9 @@ public class ChestInfo : MonoBehaviour
                 break;
             case ChestState.Unlocked:
                 initialiseButton(onClickCollectChest, "Collect Chest");
+                break;
+            case ChestState.Opening:
+                //
                 break;
         }
 
@@ -134,7 +137,10 @@ public class ChestInfo : MonoBehaviour
     {
         //deduct gemCostToOpen from the total no of remaining gem
         UiManager.Instance.updateGemValue(-gemCost);
-        StopCoroutine(gemCostCoroutine);
+        if (gemCostCoroutine != null)
+        {
+            StopCoroutine(gemCostCoroutine);
+        }
 
         //chest state open
 
@@ -151,13 +157,14 @@ public class ChestInfo : MonoBehaviour
         //open a colect ui screen
         chestCollect.gameObject.SetActive(true);
 
-        //temporary
         int _coin = Random.Range(m_coinLowerBound, m_coinUpperBound);
         int _gem = Random.Range(m_gemsLowerBound, m_gemsUpperBound);
         chestCollect.Initialise(_coin,_gem);
         
         Debug.Log($"coin received = {_coin}");
         Debug.Log($"gem received = {_gem}");
+
+        this.gameObject.SetActive(false);
     }
 
 }

@@ -70,6 +70,7 @@ public class TimerManager : MonoBehaviour
             {
                 timerBG.gameObject.SetActive(false);
                 isTimerRunning = false;
+                EventManager.instance.InvokeUnlocked();
             }
 
             yield return new WaitForSeconds(1);

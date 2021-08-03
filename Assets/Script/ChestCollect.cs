@@ -33,5 +33,7 @@ public class ChestCollect : MonoBehaviour
     {
         UiManager.Instance.updateGemValue(m_gemAmount);
         UiManager.Instance.updateCoinValue(m_coinAmount);
+
+        this.gameObject.SetActive(false);
     }
 }
