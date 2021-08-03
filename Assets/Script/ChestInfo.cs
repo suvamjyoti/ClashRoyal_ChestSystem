@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class ChestInfo : MonoBehaviour
 {
@@ -10,83 +11,158 @@ public class ChestInfo : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinTextField;
     [SerializeField] private TextMeshProUGUI gemTextField;
 
-    [SerializeField] private Button startTimerButton;
-    [SerializeField] private Button openUsingGemButton;
+    [SerializeField] private Button chestInfoButton;
+    [SerializeField] private TextMeshProUGUI chestInfoText;
+
+    //[SerializeField] private Button openUsingGemButton;
+    [SerializeField] private Button closeButton;
+
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI gemText;
 
     [SerializeField] private Image chestImage;
+    [SerializeField] private TimerManager timerManager;
+
+    private int gemCost;
+    private float timer;
+    private Coroutine gemCostCoroutine;
 
 
-    private int coinLowerBound;
-    private int coinUpperBound;
-    private int gemsLowerBound;
-    private int gemsUpperBound;
+    private int m_coinLowerBound;
+    private int m_coinUpperBound;
+    private int m_gemsLowerBound;
+    private int m_gemsUpperBound;
+    private ChestState m_chestCurrentState;
 
     
     //constructor
-    public ChestInfo(ChestScriptableObject chest)
+    public void Initialise(ChestSlot chestSlot)
     {
-        coinLowerBound = chest.coinLowerBound;
-        coinUpperBound = chest.coinUpperBound;
+        m_coinLowerBound = chestSlot.chestConfig.coinLowerBound;
+        m_coinUpperBound = chestSlot.chestConfig.coinUpperBound;
 
-        gemsLowerBound = chest.gemsLowerBound;
-        gemsUpperBound = chest.gemsUpperBound;
+        m_gemsLowerBound = chestSlot.chestConfig.gemsLowerBound;
+        m_gemsUpperBound = chestSlot.chestConfig.gemsUpperBound;
 
-        chestImage.sprite = chest.chestSprite;
+        chestImage.sprite = chestSlot.chestConfig.chestSprite;
 
-        timerText.text = chest.timer.ToString();
+        m_chestCurrentState = chestSlot.chestConfig.chestCurrentState;
+
+        timer = chestSlot.chestConfig.timer;
+
+        chestSlot.OnUnlocked += OnChestTimerComplete;
+
+        timerText.text = timer.ToString();
+
+        chestInfoButton.gameObject.SetActive(true);
 
         init();
     }
 
-
-
-    // Start is called before the first frame update
     void init()
     {
 
         //initialising the text field
-        coinTextField.text = $"{coinLowerBound} - {coinUpperBound} ";
-        gemTextField.text = $"{gemsLowerBound} - {gemsUpperBound} ";
+        coinTextField.text = $"{m_coinLowerBound} - {m_coinUpperBound} ";
+        gemTextField.text = $"{m_gemsLowerBound} - {m_gemsUpperBound} ";
 
-        //adding listener to buttons
-        startTimerButton.onClick.AddListener(onClickStartTimer);
-        openUsingGemButton.onClick.AddListener(onClickOpenUsingGem);
 
+        switch (m_chestCurrentState)
+        {
+            case ChestState.Locked:
+                initialiseButton(onClickStartTimer, "Start Timer");
+                break;
+            case ChestState.Unlocked:
+                initialiseButton(onClickCollectChest, "Collect Chest");
+                break;
+        }
+
+        closeButton.onClick.AddListener(onClose);
+        timerManager.gameObject.SetActive(false);
+    }
+
+    private void onClose()
+    {
+        this.gameObject.SetActive(false);
     }
 
 
+    private void onClickCollectChest()
+    {
+
+    }
 
     private void onClickStartTimer()
     {
-
-        startTimerButton.gameObject.SetActive(false);
+        initialiseButton(onClickOpenUsingGem,"Open using Chest");
+        
+        
         timerText.gameObject.SetActive(false);
 
-
         //call start timer function
+        timerManager.gameObject.SetActive(true);
+        timerManager.InitialiseTimer(timer);
 
-
-        openUsingGemButton.gameObject.SetActive(true);
+        //openUsingGemButton.gameObject.SetActive(true);
         gemText.gameObject.SetActive(true);
 
+        //update gem cost every 1 minute
+        gemCostCoroutine = StartCoroutine(updateGemCost());
 
-        //set gem Text according to timer.
+    }
 
+    private void initialiseButton(UnityAction callBack,string buttonName)
+    {
+        chestInfoButton.onClick.RemoveAllListeners();
+        chestInfoButton.onClick.AddListener(callBack);
+        chestInfoText.text = buttonName;
+    }
 
+    private IEnumerator updateGemCost()
+    {
+        while (timerManager.getRemainingTime()>60)
+        {
+            gemCost = (int)(timerManager.getRemainingTime() / 30);
+            gemText.text = gemCost.ToString();
+            yield return new WaitForSeconds(60);
+        }
     }
 
     private void onClickOpenUsingGem()
     {
         //deduct gemCostToOpen from the total no of remaining gem
+        UiManager.Instance.updateGemValue(-gemCost);
+        StopCoroutine(gemCostCoroutine);
 
+        //chest state open
+
+        onClose();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnChestTimerComplete()
     {
-        
+        initialiseButton(OnClickCollectChest, "Collect Chest");
     }
+
+    private void OnClickCollectChest()
+    {
+        //open a colect ui screen
+
+        //random coin generate
+        
+
+        //show coin amount received
+        Debug.Log($"coin received = {Random.Range(m_coinLowerBound, m_coinUpperBound)}");
+
+        //show gems received
+        Debug.Log($"coin received = {Random.Range(m_gemsLowerBound,m_gemsUpperBound)}");
+
+        //close button on click
+
+        //add coin and gems to ui numbers
+
+        //remove chest from chest Slot
+    }
+
 }

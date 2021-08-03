@@ -9,7 +9,7 @@ public enum ChestType
 
 public enum ChestState
 {
-    Locked,Unlocked,NotCollected,Collected
+    Locked, Opening, Unlocked,Collected
 }
 
 [CreateAssetMenu(fileName = "ScriptableChest", menuName = "ScriptableObject/chest")]
@@ -24,4 +24,5 @@ public class ChestScriptableObject : ScriptableObject
 
     [SerializeField] public Sprite chestSprite;
     [SerializeField] public Animation chestOpenAnimationClip;
+    [SerializeField] public ChestState chestCurrentState;
 }

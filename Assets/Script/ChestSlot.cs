@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +14,12 @@ public class ChestSlot : MonoBehaviour
 
     [HideInInspector] public ChestScriptableObject chestConfig;
 
+
+    public event Action OnUnlocked; 
+
     
     public void AddChest(ChestScriptableObject chest)
     {
-        Debug.Log("adding chest to chest slot");
         _isEmpty = false;
 
         chestConfig = chest;
@@ -26,6 +27,21 @@ public class ChestSlot : MonoBehaviour
 
         //setting chest sprite
         chestSprite.sprite = chest.chestSprite;
+    }
+
+    public void RemoveChest()
+    {
+
+    }
+
+    public void StartChestTimer()
+    {
+
+    }
+
+    public void OnChestUnlocked()
+    {
+        OnUnlocked?.Invoke();
     }
 
 

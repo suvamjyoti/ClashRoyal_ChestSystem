@@ -13,6 +13,8 @@ public class ChestManager : MonoBehaviour
     [SerializeField] private ChestScriptableObject[] chestList;
     public Dictionary<ChestType,ChestScriptableObject> chestPoolDict;
 
+    [SerializeField] private ChestInfo chestInfo;
+
     private bool isChestOpening = false;
     
     #region Singelton
@@ -68,11 +70,8 @@ public class ChestManager : MonoBehaviour
             return;
         }
 
-        ChestInfo chestInfo = new ChestInfo(chestSlot.chestConfig);
-
-        ChestInfo chestInfoObject = Instantiate(chestInfo,transform);
-
-        transform.parent = chestInfoObject.transform;
+        chestInfo.Initialise(chestSlot);
+        chestInfo.gameObject.SetActive(true);
 
     }
 

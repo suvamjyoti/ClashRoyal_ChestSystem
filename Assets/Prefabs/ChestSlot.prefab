@@ -256,7 +256,7 @@ RectTransform:
   - {fileID: 2473346779601610995}
   - {fileID: 5772872305935452896}
   - {fileID: 9056687888693853562}
-  - {fileID: 3617813463871081758}
+  - {fileID: 6199674576696877992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -359,27 +359,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestSprite: {fileID: 4489995110936303197}
   chestConfig: {fileID: 0}
---- !u!1001 &5138142962859915255
+--- !u!1001 &2554381902258690369
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 7378032267969572098}
     m_Modifications:
-    - target: {fileID: 8465456544962452373, guid: b601c452ac95b18419c4af2c1bafb007,
+    - target: {fileID: 3882179146045551137, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8465456545069896534, guid: b601c452ac95b18419c4af2c1bafb007,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -142.1
       objectReference: {fileID: 0}
     - target: {fileID: 8465456545564031720, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
       propertyPath: m_Name
       value: TimeSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465456545564031720, guid: b601c452ac95b18419c4af2c1bafb007,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
@@ -419,12 +419,12 @@ PrefabInstance:
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 320.0465
       objectReference: {fileID: 0}
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 80.08627
       objectReference: {fileID: 0}
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 143.2
+      value: 129
       objectReference: {fileID: 0}
     - target: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
         type: 3}
@@ -486,11 +486,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8556745088886236131, guid: b601c452ac95b18419c4af2c1bafb007,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.02745098
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b601c452ac95b18419c4af2c1bafb007, type: 3}
---- !u!224 &3617813463871081758 stripped
+--- !u!224 &6199674576696877992 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8465456545564031721, guid: b601c452ac95b18419c4af2c1bafb007,
     type: 3}
-  m_PrefabInstance: {fileID: 5138142962859915255}
+  m_PrefabInstance: {fileID: 2554381902258690369}
   m_PrefabAsset: {fileID: 0}
