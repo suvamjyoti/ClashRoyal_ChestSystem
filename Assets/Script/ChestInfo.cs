@@ -23,6 +23,7 @@ public class ChestInfo : MonoBehaviour
 
     [SerializeField] private Image chestImage;
     [SerializeField] private TimerManager timerManager;
+    [SerializeField] private ChestCollect chestCollect;
 
     private int gemCost;
     private float timer;
@@ -148,21 +149,15 @@ public class ChestInfo : MonoBehaviour
     private void OnClickCollectChest()
     {
         //open a colect ui screen
+        chestCollect.gameObject.SetActive(true);
 
-        //random coin generate
+        //temporary
+        int _coin = Random.Range(m_coinLowerBound, m_coinUpperBound);
+        int _gem = Random.Range(m_gemsLowerBound, m_gemsUpperBound);
+        chestCollect.Initialise(_coin,_gem);
         
-
-        //show coin amount received
-        Debug.Log($"coin received = {Random.Range(m_coinLowerBound, m_coinUpperBound)}");
-
-        //show gems received
-        Debug.Log($"coin received = {Random.Range(m_gemsLowerBound,m_gemsUpperBound)}");
-
-        //close button on click
-
-        //add coin and gems to ui numbers
-
-        //remove chest from chest Slot
+        Debug.Log($"coin received = {_coin}");
+        Debug.Log($"gem received = {_gem}");
     }
 
 }

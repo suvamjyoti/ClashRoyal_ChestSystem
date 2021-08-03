@@ -42,4 +42,10 @@ public class UiManager : MonoBehaviour
         gemText.text = gems.ToString();
     }
 
+    public void updateCoinValue(int coinDiference)
+    {
+        coins += coinDiference;
+        coinText.text = coins.ToString();
+    }
+
 }
