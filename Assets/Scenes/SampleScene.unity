@@ -2013,6 +2013,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4237168527634035731, guid: 7d002d31b3f88324c9aea78a566c1d39,
+        type: 3}
+      propertyPath: chestCollect
+      value: 
+      objectReference: {fileID: 7171271408745294515}
     - target: {fileID: 5809271461506464128, guid: 7d002d31b3f88324c9aea78a566c1d39,
         type: 3}
       propertyPath: m_Pivot.x

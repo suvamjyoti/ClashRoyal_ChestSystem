@@ -22,18 +22,19 @@ public class TimerManager : MonoBehaviour
         //remainingTime = this.waitTime;
         updateTimerText();
         StartCoroutine(initialAnimation());
+
+        EventManager.instance.OnUnlocked += OnTimerComplete;
     }
 
     private IEnumerator initialAnimation()
     {
         //first we stretch it out
         bool isStretching = true;
-        
         while (isStretching)
         {
             if (timerBG.fillAmount < 1)
             {
-                timerBG.fillAmount += 0.2f;
+                timerBG.fillAmount += 0.4f;
             }
             else
             {
@@ -41,7 +42,7 @@ public class TimerManager : MonoBehaviour
                 isStretching = false;
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         //now show clock
@@ -68,15 +69,27 @@ public class TimerManager : MonoBehaviour
             }
             else
             {
-                timerBG.gameObject.SetActive(false);
                 isTimerRunning = false;
-                EventManager.instance.InvokeUnlocked();
+                EventManager.instance.InvokeUnlocked();   
             }
 
             yield return new WaitForSeconds(1);
         }
     }
 
+    private void OnTimerComplete()
+    {
+        timerBG.gameObject.SetActive(false);
+        ResetLocalVariable();
+    }
+
+
+    private void ResetLocalVariable()
+    {
+        timePassed = 0;
+        timerBG.gameObject.SetActive(true);
+        timerBG.fillAmount = 0;
+    }
 
     private void updateTimerText()
     {

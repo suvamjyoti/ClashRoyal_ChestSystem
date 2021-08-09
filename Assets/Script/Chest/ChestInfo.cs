@@ -18,44 +18,46 @@ public class ChestInfo : MonoBehaviour
     [SerializeField] private Button closeButton;
 
 
-    [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private TextMeshProUGUI gemText;
-
+    [SerializeField] private TextMeshProUGUI textField;
+    
     [SerializeField] private Image chestImage;
     [SerializeField] private TimerManager timerManager;
     [SerializeField] private ChestCollect chestCollect;
+    [SerializeField] private int updateGemCostAfter = 2;        //in sec
 
-    private int gemCost;
-    private float timer;
-    private Coroutine gemCostCoroutine;
+    private int gemCost=0;
+    private float timer=0;
+    private Coroutine gemCostCoroutine = null;
 
 
     private int m_coinLowerBound;
     private int m_coinUpperBound;
     private int m_gemsLowerBound;
     private int m_gemsUpperBound;
+    private ChestSlot m_chestSlot;
     private ChestState m_chestCurrentState;
+
+    
 
     
     //constructor
     public void Initialise(ChestSlot chestSlot)
     {
+        m_chestSlot = chestSlot;
         m_coinLowerBound = chestSlot.chestConfig.coinLowerBound;
         m_coinUpperBound = chestSlot.chestConfig.coinUpperBound;
-
         m_gemsLowerBound = chestSlot.chestConfig.gemsLowerBound;
         m_gemsUpperBound = chestSlot.chestConfig.gemsUpperBound;
 
         chestImage.sprite = chestSlot.chestConfig.chestSprite;
-
         m_chestCurrentState = chestSlot.chestConfig.chestCurrentState;
-
         timer = chestSlot.chestConfig.timer;
+
 
         EventManager.instance.OnUnlocked += OnChestTimerComplete;
 
-        timerText.text = timer.ToString();
 
+        textField.text = timer.ToString();
         chestInfoButton.gameObject.SetActive(true);
 
         init();
@@ -69,13 +71,13 @@ public class ChestInfo : MonoBehaviour
         gemTextField.text = $"{m_gemsLowerBound} - {m_gemsUpperBound} ";
 
 
-        switch (m_chestCurrentState)
+        switch (m_chestSlot.currentChestState)
         {
             case ChestState.Locked:
                 initialiseButton(onClickStartTimer, "Start Timer");
                 break;
             case ChestState.Unlocked:
-                initialiseButton(onClickCollectChest, "Collect Chest");
+                initialiseButton(OnClickCollectChest, "Collect Chest");
                 break;
             case ChestState.Opening:
                 //
@@ -91,25 +93,16 @@ public class ChestInfo : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-
-    private void onClickCollectChest()
-    {
-
-    }
-
     private void onClickStartTimer()
     {
-        initialiseButton(onClickOpenUsingGem,"Open using Chest");
+        initialiseButton(onClickOpenUsingGem,"Open using Gems");
         
         
-        timerText.gameObject.SetActive(false);
+        textField.gameObject.SetActive(false);
 
         //call start timer function
         timerManager.gameObject.SetActive(true);
         timerManager.InitialiseTimer(timer);
-
-        //openUsingGemButton.gameObject.SetActive(true);
-        gemText.gameObject.SetActive(true);
 
         //update gem cost every 1 minute
         gemCostCoroutine = StartCoroutine(updateGemCost());
@@ -125,11 +118,15 @@ public class ChestInfo : MonoBehaviour
 
     private IEnumerator updateGemCost()
     {
-        while (timerManager.getRemainingTime()>60)
+
+        textField.gameObject.SetActive(true);
+        textField.text = (timerManager.getRemainingTime() / 2).ToString();
+
+        while (timerManager.getRemainingTime()>2)
         {
-            gemCost = (int)(timerManager.getRemainingTime() / 30);
-            gemText.text = gemCost.ToString();
-            yield return new WaitForSeconds(60);
+            gemCost = (int)(timerManager.getRemainingTime() / 2);
+            textField.text = gemCost.ToString();
+            yield return new WaitForSeconds(updateGemCostAfter);
         }
     }
 
@@ -142,18 +139,21 @@ public class ChestInfo : MonoBehaviour
             StopCoroutine(gemCostCoroutine);
         }
 
-        //chest state open
-
-        onClose();
+        EventManager.instance.InvokeUnlocked();
+        OnChestTimerComplete();
     }
 
     private void OnChestTimerComplete()
     {
+        textField.gameObject.SetActive(false);
         initialiseButton(OnClickCollectChest, "Collect Chest");
+        m_chestSlot.currentChestState = ChestState.Unlocked;
     }
 
     private void OnClickCollectChest()
     {
+        m_chestSlot.OnChestCollected();
+
         //open a colect ui screen
         chestCollect.gameObject.SetActive(true);
 
@@ -163,8 +163,17 @@ public class ChestInfo : MonoBehaviour
         
         Debug.Log($"coin received = {_coin}");
         Debug.Log($"gem received = {_gem}");
-
+        
+        ResetLocalVariable();
         this.gameObject.SetActive(false);
     }
+
+    private void ResetLocalVariable()
+    {
+        textField.gameObject.SetActive(true);
+        gemCost = 0;
+        timer = 0;
+        gemCostCoroutine = null;
+}
 
 }

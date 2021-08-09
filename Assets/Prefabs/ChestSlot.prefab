@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
+  m_Color: {r: 0.2795741, g: 0.8301887, b: 0.14489143, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -358,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestSprite: {fileID: 4489995110936303197}
+  chestSlotBackground: {fileID: 6931324183234169863}
   chestConfig: {fileID: 0}
 --- !u!1001 &2554381902258690369
 PrefabInstance:

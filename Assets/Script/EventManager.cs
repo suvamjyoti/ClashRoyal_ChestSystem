@@ -8,8 +8,6 @@ public class EventManager : MonoBehaviour
 
     public event Action OnUnlocked;
 
-
-
     #region Singelton
 
     private static EventManager _instance;
