@@ -2,15 +2,6 @@
 using UnityEngine.UI;
 
 
-public enum ChestType
-{
-    Common,Rare,Epic,Legendary
-}
-
-public enum ChestState
-{
-    Locked, Opening, Unlocked,Collected
-}
 
 [CreateAssetMenu(fileName = "ScriptableChest", menuName = "ScriptableObject/chest")]
 public class ChestScriptableObject : ScriptableObject

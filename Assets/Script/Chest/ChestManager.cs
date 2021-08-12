@@ -9,6 +9,8 @@ public class ChestManager : MonoBehaviour
     private ChestSlot[] chestSlots;
 
     [SerializeField] private int NoOfChestAllowedToQueue;
+    [SerializeField] private int NoOfChestAllowedToOpenSimultaniously;
+
 
     [SerializeField] private ChestScriptableObject[] chestList;
     public Dictionary<ChestType,ChestScriptableObject> chestPoolDict;
@@ -114,6 +116,18 @@ public class ChestManager : MonoBehaviour
         }
 
         return nos;
+    }
+
+    public bool CanStartOpeningChest()
+    {
+        int nos = 0;
+
+        foreach (ChestSlot chestSlot in chestSlots)
+        {
+            nos = (chestSlot.isOpening) ? nos+1 : nos ;
+        }
+
+        return (nos>=NoOfChestAllowedToOpenSimultaniously)? false : true;
     }
 
 }

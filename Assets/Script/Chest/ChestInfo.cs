@@ -95,18 +95,25 @@ public class ChestInfo : MonoBehaviour
 
     private void onClickStartTimer()
     {
-        initialiseButton(onClickOpenUsingGem,"Open using Gems");
-        
-        
-        textField.gameObject.SetActive(false);
+        if (ChestManager.instance.CanStartOpeningChest())
+        {
+            initialiseButton(onClickOpenUsingGem, "Open using Gems");
 
-        //call start timer function
-        timerManager.gameObject.SetActive(true);
-        timerManager.InitialiseTimer(timer);
+            m_chestSlot.currentChestState = ChestState.Opening;
+            m_chestSlot.startTimer();
+            textField.gameObject.SetActive(false);
 
-        //update gem cost every 1 minute
-        gemCostCoroutine = StartCoroutine(updateGemCost());
+            //call start timer function
+            timerManager.gameObject.SetActive(true);
+            timerManager.InitialiseTimer(timer);
 
+            //update gem cost every 1 minute
+            gemCostCoroutine = StartCoroutine(updateGemCost());
+        }
+        else
+        {
+            Debug.LogError("Another chest is currently opening");
+        }
     }
 
     private void initialiseButton(UnityAction callBack,string buttonName)
@@ -148,6 +155,7 @@ public class ChestInfo : MonoBehaviour
         textField.gameObject.SetActive(false);
         initialiseButton(OnClickCollectChest, "Collect Chest");
         m_chestSlot.currentChestState = ChestState.Unlocked;
+        m_chestSlot.OnChestUnlocked();
     }
 
     private void OnClickCollectChest()

@@ -16,10 +16,10 @@ TextureImporter:
     second: Legendary
   - first:
       213: -5279824056886119778
-    second: Chest_4
+    second: l1
   - first:
       213: 826535257128478662
-    second: Chest_5
+    second: l2
   - first:
       213: 6800871473378233394
     second: Chest_6
@@ -34,10 +34,10 @@ TextureImporter:
     second: epic
   - first:
       213: 3308845482342318418
-    second: Chest_10
+    second: e1
   - first:
       213: 2433344464911009892
-    second: Chest_11
+    second: e2
   - first:
       213: 809147842542603750
     second: Chest_12
@@ -49,13 +49,13 @@ TextureImporter:
     second: Chest_14
   - first:
       213: -2133514149271673934
-    second: Chest_15
+    second: l3
   - first:
       213: -3250311617483093727
-    second: Chest_16
+    second: l4
   - first:
       213: 3927097339574295699
-    second: Chest_17
+    second: l5
   - first:
       213: -8087423377682051163
     second: Chest_18
@@ -67,13 +67,13 @@ TextureImporter:
     second: Chest_20
   - first:
       213: 6440791048219719222
-    second: Chest_21
+    second: e3
   - first:
       213: 3054023713624970721
-    second: Chest_22
+    second: e4
   - first:
       213: -513581077790141561
-    second: Chest_23
+    second: e5
   - first:
       213: -5011564969414911021
     second: Chest_24
@@ -85,13 +85,13 @@ TextureImporter:
     second: Chest_26
   - first:
       213: 3121469815796470927
-    second: Chest_27
+    second: l6
   - first:
       213: 5069144128572007318
-    second: Chest_28
+    second: l
   - first:
       213: 5416308050777540886
-    second: Chest_29
+    second: l7
   - first:
       213: 3452869742423688151
     second: Chest_30
@@ -103,13 +103,13 @@ TextureImporter:
     second: Chest_32
   - first:
       213: 413928482929795859
-    second: Chest_33
+    second: e6
   - first:
       213: 8767898408620927151
-    second: Chest_34
+    second: e7
   - first:
       213: -8340100835269129508
-    second: Chest_35
+    second: e
   - first:
       213: 1869961805298787542
     second: Chest_36
@@ -121,13 +121,13 @@ TextureImporter:
     second: Chest_38
   - first:
       213: -1597750195219126712
-    second: Chest_39
+    second: l8
   - first:
       213: -4487419896090488611
-    second: Chest_40
+    second: l9
   - first:
       213: -2985083834250574430
-    second: Chest_41
+    second: l10
   - first:
       213: -5666776470315066278
     second: Chest_42
@@ -139,13 +139,13 @@ TextureImporter:
     second: Chest_44
   - first:
       213: 1665826028360175321
-    second: Chest_45
+    second: e8
   - first:
       213: 355575231807945673
-    second: Chest_46
+    second: e9
   - first:
       213: -841924844316548865
-    second: Chest_47
+    second: e10
   - first:
       213: -2826720843060489373
     second: Chest_48
@@ -169,19 +169,19 @@ TextureImporter:
     second: Common
   - first:
       213: 3858369723461128892
-    second: Chest_55
+    second: 1
   - first:
       213: 6001375821474660534
-    second: Chest_56
+    second: 2
   - first:
       213: 2305400638160058017
     second: Rare
   - first:
       213: -807753114896775509
-    second: Chest_58
+    second: r1
   - first:
       213: -1830140423830354450
-    second: Chest_59
+    second: r2
   - first:
       213: -4974736383763586554
     second: Chest_60
@@ -202,22 +202,22 @@ TextureImporter:
     second: Chest_65
   - first:
       213: 3706564341304244370
-    second: Chest_66
+    second: 3
   - first:
       213: 7779976366110996639
-    second: Chest_67
+    second: 4
   - first:
       213: 4404631660362975250
-    second: Chest_68
+    second: 5
   - first:
       213: -5543285702919434909
-    second: Chest_69
+    second: r3
   - first:
       213: 7360824014747931102
-    second: Chest_70
+    second: r4
   - first:
       213: 601911165392879477
-    second: Chest_71
+    second: r5
   - first:
       213: 7819420865214667529
     second: Chest_72
@@ -238,22 +238,22 @@ TextureImporter:
     second: Chest_77
   - first:
       213: 2006403652956081465
-    second: Chest_78
+    second: 6
   - first:
       213: 7045058229648588748
-    second: Chest_79
+    second: 7
   - first:
       213: -537508349927870006
-    second: Chest_80
+    second: 8
   - first:
       213: -3928758270679859737
-    second: Chest_81
+    second: r6
   - first:
       213: 8118827782539235337
-    second: Chest_82
+    second: r7
   - first:
       213: -6055454299218979487
-    second: Chest_83
+    second: Chest_83r7
   - first:
       213: 5848780100508119553
     second: Chest_84
@@ -274,22 +274,22 @@ TextureImporter:
     second: Chest_89
   - first:
       213: 3752215320096216987
-    second: Chest_90
+    second: 9
   - first:
       213: -7481822342915644126
-    second: Chest_91
+    second: 10
   - first:
       213: 3124906509113389248
-    second: Chest_92
+    second: 11
   - first:
       213: -4530006466437444196
-    second: Chest_93
+    second: r8
   - first:
       213: -9163103772771823723
-    second: Chest_94
+    second: r9
   - first:
       213: -1906858105530817407
-    second: Chest_95
+    second: r10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -471,7 +471,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_4
+      name: l1
       rect:
         serializedVersion: 2
         x: 193
@@ -492,7 +492,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_5
+      name: l2
       rect:
         serializedVersion: 2
         x: 241
@@ -597,7 +597,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_10
+      name: e1
       rect:
         serializedVersion: 2
         x: 481
@@ -618,7 +618,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_11
+      name: e2
       rect:
         serializedVersion: 2
         x: 529
@@ -702,7 +702,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_15
+      name: l3
       rect:
         serializedVersion: 2
         x: 145
@@ -723,7 +723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_16
+      name: l4
       rect:
         serializedVersion: 2
         x: 193
@@ -744,7 +744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_17
+      name: l5
       rect:
         serializedVersion: 2
         x: 241
@@ -828,7 +828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_21
+      name: e3
       rect:
         serializedVersion: 2
         x: 433
@@ -849,7 +849,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_22
+      name: e4
       rect:
         serializedVersion: 2
         x: 481
@@ -870,7 +870,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_23
+      name: e5
       rect:
         serializedVersion: 2
         x: 529
@@ -954,7 +954,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_27
+      name: l6
       rect:
         serializedVersion: 2
         x: 145
@@ -975,7 +975,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_28
+      name: l
       rect:
         serializedVersion: 2
         x: 193
@@ -996,7 +996,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_29
+      name: l7
       rect:
         serializedVersion: 2
         x: 241
@@ -1080,7 +1080,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_33
+      name: e6
       rect:
         serializedVersion: 2
         x: 433
@@ -1101,7 +1101,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_34
+      name: e7
       rect:
         serializedVersion: 2
         x: 481
@@ -1122,7 +1122,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_35
+      name: e
       rect:
         serializedVersion: 2
         x: 529
@@ -1206,7 +1206,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_39
+      name: l8
       rect:
         serializedVersion: 2
         x: 145
@@ -1227,7 +1227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_40
+      name: l9
       rect:
         serializedVersion: 2
         x: 193
@@ -1248,7 +1248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_41
+      name: l10
       rect:
         serializedVersion: 2
         x: 241
@@ -1332,7 +1332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_45
+      name: e8
       rect:
         serializedVersion: 2
         x: 433
@@ -1353,7 +1353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_46
+      name: e9
       rect:
         serializedVersion: 2
         x: 481
@@ -1374,7 +1374,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_47
+      name: e10
       rect:
         serializedVersion: 2
         x: 529
@@ -1542,7 +1542,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_55
+      name: 1
       rect:
         serializedVersion: 2
         x: 339
@@ -1563,7 +1563,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_56
+      name: 2
       rect:
         serializedVersion: 2
         x: 387
@@ -1605,7 +1605,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_58
+      name: r1
       rect:
         serializedVersion: 2
         x: 486
@@ -1626,7 +1626,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_59
+      name: r2
       rect:
         serializedVersion: 2
         x: 534
@@ -1773,7 +1773,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_66
+      name: 3
       rect:
         serializedVersion: 2
         x: 291
@@ -1794,7 +1794,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_67
+      name: 4
       rect:
         serializedVersion: 2
         x: 339
@@ -1815,7 +1815,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_68
+      name: 5
       rect:
         serializedVersion: 2
         x: 387
@@ -1836,7 +1836,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_69
+      name: r3
       rect:
         serializedVersion: 2
         x: 438
@@ -1857,7 +1857,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_70
+      name: r4
       rect:
         serializedVersion: 2
         x: 486
@@ -1878,7 +1878,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_71
+      name: r5
       rect:
         serializedVersion: 2
         x: 534
@@ -2025,7 +2025,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_78
+      name: 6
       rect:
         serializedVersion: 2
         x: 291
@@ -2046,7 +2046,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_79
+      name: 7
       rect:
         serializedVersion: 2
         x: 339
@@ -2067,7 +2067,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_80
+      name: 8
       rect:
         serializedVersion: 2
         x: 387
@@ -2088,7 +2088,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_81
+      name: r6
       rect:
         serializedVersion: 2
         x: 438
@@ -2109,7 +2109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_82
+      name: r7
       rect:
         serializedVersion: 2
         x: 486
@@ -2130,7 +2130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_83
+      name: Chest_83r7
       rect:
         serializedVersion: 2
         x: 534
@@ -2277,7 +2277,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_90
+      name: 9
       rect:
         serializedVersion: 2
         x: 291
@@ -2298,7 +2298,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_91
+      name: 10
       rect:
         serializedVersion: 2
         x: 339
@@ -2319,7 +2319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_92
+      name: 11
       rect:
         serializedVersion: 2
         x: 387
@@ -2340,7 +2340,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_93
+      name: r8
       rect:
         serializedVersion: 2
         x: 438
@@ -2361,7 +2361,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_94
+      name: r9
       rect:
         serializedVersion: 2
         x: 486
@@ -2382,7 +2382,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Chest_95
+      name: r10
       rect:
         serializedVersion: 2
         x: 534
