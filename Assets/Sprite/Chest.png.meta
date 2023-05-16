@@ -291,7 +291,7 @@ TextureImporter:
       213: -1906858105530817407
     second: r10
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -311,6 +311,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -319,12 +321,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -342,10 +344,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -373,6 +379,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2412,6 +2430,103 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      e6: 413928482929795859
+      Chest_42: -5666776470315066278
+      Chest_6: 6800871473378233394
+      Chest_25: -2515680620536688048
+      6: 2006403652956081465
+      epic: 6093387866532032824
+      Chest_36: 1869961805298787542
+      Chest_77: 3439654914021689938
+      Chest_83r7: -6055454299218979487
+      5: 4404631660362975250
+      Chest_73: -3140748042653067324
+      Chest_20: -9133142720896498367
+      l5: 3927097339574295699
+      Chest_76: -4998734290977640809
+      Chest_26: -1996786353684055321
+      r9: -9163103772771823723
+      r10: -1906858105530817407
+      r1: -807753114896775509
+      e7: 8767898408620927151
+      Chest_84: 5848780100508119553
+      Rare: 2305400638160058017
+      Chest_48: -2826720843060489373
+      Chest_89: 1721751252592892131
+      l9: -4487419896090488611
+      Chest_44: 8987639272021279478
+      Chest_65: -3803753164634682641
+      Chest_13: 5112667789641387230
+      Chest_12: 809147842542603750
+      e10: -841924844316548865
+      Chest_87: 8037763750788794599
+      9: 3752215320096216987
+      4: 7779976366110996639
+      e8: 1665826028360175321
+      Chest_50: 2563093921891564215
+      Chest_52: 4861080219056525048
+      Chest_64: -4623957704973481280
+      r4: 7360824014747931102
+      l8: -1597750195219126712
+      l1: -5279824056886119778
+      Chest_74: -2328237000342427153
+      Chest_7: 8322665274642746122
+      Chest_32: -4423524984174020121
+      r7: 8118827782539235337
+      r2: -1830140423830354450
+      Chest_49: -5617861463011901446
+      Chest_14: -218140749501768013
+      3: 3706564341304244370
+      l: 5069144128572007318
+      Chest_0: -5281422124547630143
+      Chest_18: -8087423377682051163
+      Chest_63: -2450677465559510966
+      l7: 5416308050777540886
+      r8: -4530006466437444196
+      e5: -513581077790141561
+      Chest_2: -4685547431992939551
+      Chest_37: 2912462302233453221
+      l2: 826535257128478662
+      Chest_8: -1722722728150929444
+      Chest_19: 3729876405736147528
+      e3: 6440791048219719222
+      Chest_30: 3452869742423688151
+      Chest_72: 7819420865214667529
+      Chest_43: -8638199554770001742
+      Chest_86: -4504165598084862478
+      r5: 601911165392879477
+      Chest_88: -3551065836846546185
+      e1: 3308845482342318418
+      l3: -2133514149271673934
+      Chest_53: 8499062616496095679
+      Chest_51: 5326591566731563083
+      Chest_31: 4682298098424725300
+      Chest_38: -8278196380978326576
+      Common: -7764830479433564775
+      8: -537508349927870006
+      e2: 2433344464911009892
+      Chest_60: -4974736383763586554
+      Chest_62: 4442766958111248969
+      Legendary: 8985439187258846068
+      11: 3124906509113389248
+      l10: -2985083834250574430
+      2: 6001375821474660534
+      r3: -5543285702919434909
+      r6: -3928758270679859737
+      Chest_75: -4769611010709686755
+      Chest_85: 6322575232316338134
+      e9: 355575231807945673
+      Chest_1: 4714410783012859700
+      l4: -3250311617483093727
+      1: 3858369723461128892
+      7: 7045058229648588748
+      Chest_61: 3076581632799989507
+      Chest_24: -5011564969414911021
+      l6: 3121469815796470927
+      e: -8340100835269129508
+      e4: 3054023713624970721
+      10: -7481822342915644126
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
