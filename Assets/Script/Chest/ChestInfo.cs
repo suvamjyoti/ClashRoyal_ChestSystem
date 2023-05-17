@@ -54,7 +54,7 @@ public class ChestInfo : MonoBehaviour
         timer = chestSlot.chestConfig.timer;
 
 
-        EventManager.instance.OnUnlocked += OnChestTimerComplete;
+       // EventManager.instance.OnUnlocked += OnChestTimerComplete;
 
 
         textField.text = timer.ToString();

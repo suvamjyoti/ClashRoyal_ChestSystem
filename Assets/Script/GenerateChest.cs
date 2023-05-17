@@ -38,7 +38,7 @@ public class GenerateChest : MonoBehaviour
         {
             return ChestType.Epic;
         }
-        else if(temp>=50 && temp<80)        //30% chance chest will be rare
+        else if(temp>=20 && temp<80)        //30% chance chest will be rare
         {
             return ChestType.Rare;
         }

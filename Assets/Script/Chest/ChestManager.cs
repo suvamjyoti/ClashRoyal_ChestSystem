@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 
 public class ChestManager : MonoBehaviour
 {
@@ -16,6 +16,8 @@ public class ChestManager : MonoBehaviour
     public Dictionary<ChestType,ChestScriptableObject> chestPoolDict;
 
     [SerializeField] private ChestInfo chestInfo;
+
+   
 
     private bool isChestOpening = false;
     
@@ -46,7 +48,6 @@ public class ChestManager : MonoBehaviour
         {
             chestPoolDict.Add(chest.chestType,chest);
         }
-        
     }
 
     #endregion
@@ -60,9 +61,36 @@ public class ChestManager : MonoBehaviour
             Button button = chestSlot.GetComponent<Button>();
             button.onClick.AddListener(delegate { OnSlotClicked(chestSlot);});
         }
+
+        //setFunction when a chest unlocks
+        EventManager.instance.OnUnlocked += OnChestTimerComplete;
     }
 
+    private void OnChestTimerComplete()
+    {
+        ChestSlot m_chestSlot = null;
 
+        foreach (ChestSlot chest in chestSlots)
+        {
+            
+            
+            if (!chest.isEmpty && chest.isOpening)
+            {
+                //if chest slot not empty
+                m_chestSlot = chest;
+            }
+        }
+
+        if (m_chestSlot != null)
+        {
+            m_chestSlot.currentChestState = ChestState.Unlocked;
+            m_chestSlot.OnChestUnlocked();
+        }
+        else
+        {
+            Debug.LogError("Chest not found");
+        }
+    }
 
     private void OnSlotClicked(ChestSlot chestSlot)
     {

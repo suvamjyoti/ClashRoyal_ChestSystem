@@ -18,7 +18,7 @@ public class TimerManager : MonoBehaviour
 
     public void InitialiseTimer(float waitTime)
     {
-        this.waitTime = waitTime * 60 * 60;
+        this.waitTime =  waitTime * 60 * 60;
         //remainingTime = this.waitTime;
         updateTimerText();
         StartCoroutine(initialAnimation());
